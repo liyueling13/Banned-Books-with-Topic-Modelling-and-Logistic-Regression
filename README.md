@@ -18,7 +18,7 @@ Using the Google Books API, I pulled Book Descriptions for both spreadsheets (ba
 
 I was not able to pull descriptions for all books, perhaps due to spelling errors or otherwise. I was left with a total of **1701 books**, **1013 of which were banned and 688 of which were not banned.**
 
-I used Scattertext to create a visualization of nouns appearing in banned and non-banned books.
+I used Scattertext to create a visualization of nouns appearing in the descriptions of banned and non-banned books.
 
 ![Scattertext - Banned Books - Nouns](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/a0cf84fd-3aa1-4d4c-b61a-fa91a4532c32)
 
