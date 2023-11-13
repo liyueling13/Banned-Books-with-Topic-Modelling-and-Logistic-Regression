@@ -8,7 +8,7 @@
 Over July 1, 2021 to June 30, 2022, PEN America recorded **2531 book bans of 1656 unique books** in schools across America. [According to PEN America](https://pen.org/banned-books-list-fall-2022/), popular themes for censorship are race, history, and gender and sexuality. Is this in fact the case? Let's build a model that will predict whether a book will be banned, and what themes ("features") are relevant.
 
 ## Data
-- I sourced my banned books from PEN America ([spreadsheet here](https://docs.google.com/spreadsheets/d/1hTs_PB7KuTMBtNMESFEGuK-0abzhNxVv4tgpI5-iKe8/edit#gid=1171606318)). These book bans occurred from July 1, 2021 - June 30, 2022.
+- I sourced my banned books from PEN America ([spreadsheet here](https://docs.google.com/spreadsheets/d/1hTs_PB7KuTMBtNMESFEGuK-0abzhNxVv4tgpI5-iKe8/edit#gid=1171606318)). These book bans occurred from July 1, 2021 - June 30, 2022. I retained information about authors and titles.
 - Using BeautifulSoup, I scraped my non-banned books from a private blog, [Library of 1000 Books](https://libraryof1000books.wordpress.com/the-list-of-1000-books/), containing 1000 well-known books. I checked for overlap with the PEN America list and removed duplicates. These dataframes contained authors and titles.
 - Using the Google Books API, I pulled Book Descriptions for both spreadsheets (banned and well-known books). I was not able to pull descriptions for all books, perhaps due to spelling errors or otherwise.
 - I was left with a total of **1701 books**, **1013 of which were banned and 688 of which were not banned.**
