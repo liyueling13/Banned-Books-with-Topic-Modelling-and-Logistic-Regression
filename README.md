@@ -23,11 +23,11 @@ Over July 1, 2021 to June 30, 2022, PEN America recorded **2531 book bans of 165
 7. sklearn for modelling and evaluation
 
 ## EDA
-I used Scattertext to create a visualization of nouns appearing in the descriptions of banned and non-banned books.
+I used Scattertext to create a visualization of nouns and adjectives appearing in the descriptions of banned and non-banned books.
 
-![Scattertext - Banned Books - Nouns](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/a0cf84fd-3aa1-4d4c-b61a-fa91a4532c32)
+![Banned Scattertext Explorer](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/19190299-7cce-44a3-acbc-0589f96a9e81)
 
-[Scattertext - Interactive Visualization - will take some time to load](https://liyueling13.github.io/Banned%20Scattertext%20Nouns.html)
+[Scattertext Explorer - Interactive Visualization - will take some time to load](https://liyueling13.github.io/Banned%20Scattertext%20Explorer.html)
 
 ## Modelling and Results
 ![Banned_Logreg_Coefficients](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/c960fd29-0f8f-41f0-879c-e9262c0c4406)
