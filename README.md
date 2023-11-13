@@ -1,6 +1,7 @@
 # Predicting-Banned-Books-Using-Topic-Modelling-and-Logistic-Regression
 
 ![9781549304002](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/b9fbebab-7cb6-4169-bab1-12b1098a293f) ![9781250756145](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/bd47fd6f-3e69-4778-bd2d-6f3f734a6a4e) 
+
 [Pictures from PEN America's Banned Books Webpage](https://pen.org/report/banned-in-the-usa-state-laws-supercharge-book-suppression-in-schools/)
 
 ## Intro
