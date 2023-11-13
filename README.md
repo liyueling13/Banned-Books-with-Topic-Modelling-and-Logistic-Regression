@@ -22,7 +22,13 @@ Over July 1, 2021 to June 30, 2022, PEN America recorded **2531 book bans of 165
 6. CountVectorizer and TFIDF for vectorizing words, and TruncatedSVD and NMF for topic modelling
 7. sklearn for modelling and evaluation
 
-## EDA
+## Data Wrangling and EDA
+I cleaned my data ("Book Descriptions") using various NLP techniques:
+- removed stopwords
+- removed all words except nouns and adjectives
+- lemmatized words
+- removed descriptions with too few words, truncated descriptions with too many
+
 I used Scattertext to create a visualization of nouns and adjectives appearing in the descriptions of banned and non-banned books.
 
 ![Banned Scattertext Explorer](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/19190299-7cce-44a3-acbc-0589f96a9e81)
@@ -30,6 +36,25 @@ I used Scattertext to create a visualization of nouns and adjectives appearing i
 [Scattertext Explorer - Interactive Visualization - will take some time to load](https://liyueling13.github.io/Banned%20Scattertext%20Explorer.html)
 
 ## Modelling and Results
-![Banned_Logreg_Coefficients](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/c960fd29-0f8f-41f0-879c-e9262c0c4406)
+I performed topic modelling to create "features" for my book descriptions. In the end vectorizing with TFIDF and singular value decomposition with NMF created the most descriptive columns:
+1. "nyt_author"
+2. "middle_and_high_school"
+3. "award_winning_childrens"
+4. "gender_and_sexuality"
+5. "families_and_home"
+6. "race_and_america"
+7. "growing_up"
+8. "young_woman_meets_man"
+9. "classics"
+10. "boy_girl_story"
+11. "book_series"
+12. "lgbtq_sexuality"
+13. "friendship"
+14. "prize_novel"
 
+Using these features, I tried a few models: Logistic Regression, KNN, Decision Tree, and Random Forest. They performed about equally, so for maximum interpretability I stuck with Logistic Regression. It gave me about 78% accuracy (an improvement from 63% with the dummy classifier).
 
+As we can see from both the graphs below, the books that are least likely to be banned seem to be Book Series (fantasy, war, etc.) and Classics. The books that are more likely to be banned include books about middle and high school experiences, followed closely by gender and sexuality, lgbtq issues, friendship, and romance.
+
+![Banned_Logreg_Coefficients(1)](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/57131c1b-c328-41c3-b75e-c1272393eb8c)
+![Banned_KNN_Coefficients](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/999f7c90-7344-483c-a371-2512325c9113)
