@@ -9,7 +9,7 @@ Over July 1, 2021 to June 30, 2022, PEN America recorded **2531 book bans of 165
 
 ## Data
 - I sourced my banned books from PEN America ([spreadsheet here](https://docs.google.com/spreadsheets/d/1hTs_PB7KuTMBtNMESFEGuK-0abzhNxVv4tgpI5-iKe8/edit#gid=1171606318)). These book bans occurred from July 1, 2021 - June 30, 2022. I retained information about authors and titles.
-- Using BeautifulSoup, I scraped my non-banned books from a private blog, [Library of 1000 Books](https://libraryof1000books.wordpress.com/the-list-of-1000-books/), containing 1000 well-known books. I checked for overlap with the PEN America list and removed duplicates. TI retained authors and titles.
+- Using BeautifulSoup, I scraped my non-banned books from a private blog, [Library of 1000 Books](https://libraryof1000books.wordpress.com/the-list-of-1000-books/), containing 1000 well-known books. I checked for overlap with the PEN America list and removed duplicates. I retained authors and titles.
 - Using the Google Books API, I pulled Book Descriptions for both spreadsheets (banned and well-known books). I was not able to pull descriptions for all books, perhaps due to spelling errors or otherwise.
 - I was left with a total of **1701 books**, **1013 of which were banned and 688 of which were not banned.**
 
