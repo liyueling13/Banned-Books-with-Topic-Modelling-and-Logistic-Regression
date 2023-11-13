@@ -18,7 +18,7 @@ Over July 1, 2021 to June 30, 2022, PEN America recorded **2531 book bans of 165
 2. requests and BeautifulSoup for web scraping
 3. Google Books API for obtaining book descriptions
 4. matplotlib, seaborn, and Scattertext for data visualization and analysis
-5. NLTK for NLP analysis (stopwords, tokenization, lemmatization, and more)
+5. NLTK and spacy for NLP analysis (stopwords, tokenization, lemmatization, and more)
 6. CountVectorizer and TFIDF for vectorizing words, and TruncatedSVD and NMF for topic modelling
 7. sklearn for modelling and evaluation
 
