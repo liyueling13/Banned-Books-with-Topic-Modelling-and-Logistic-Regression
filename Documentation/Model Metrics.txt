@@ -1,0 +1,9 @@
+Final Model:
+Logistic Regression Classifier 
+Parameters: {'penalty' : 'l2', 'C' : '0.1', 'solver' : 'lbfgs', 'class_weights' : 'balanced'}
+Performance metrics on test set:
+Accuracy: 0.78
+Precision: 0.87
+Recall: 0.76
+F1-Score: 0.815
+ROC-AUC score: 0.85
