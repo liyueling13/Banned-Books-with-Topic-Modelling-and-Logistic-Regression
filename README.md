@@ -37,6 +37,10 @@ I used Scattertext to create a visualization of nouns and adjectives appearing i
 
 ## Modelling and Results
 I performed topic modelling to create "features" for my book descriptions. In the end vectorizing with TFIDF and singular value decomposition with NMF created the most descriptive columns:
+
+![NMF top fourteen](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/c7b01af0-7606-44da-98ed-d4b4ff916be2)
+
+I described these topics with the following feature names:
 1. "nyt_author"
 2. "middle_and_high_school"
 3. "award_winning_childrens"
@@ -52,9 +56,14 @@ I performed topic modelling to create "features" for my book descriptions. In th
 13. "friendship"
 14. "prize_novel"
 
-Using these features, I tried a few models: Logistic Regression, KNN, Decision Tree, and Random Forest. They performed about equally, so for maximum interpretability I stuck with Logistic Regression. It gave me about 78% accuracy (an improvement from 63% with the dummy classifier).
+Using these features, I tried a few models: Logistic Regression, KNN, Decision Tree, and Random Forest. They performed about equally, so for maximum interpretability I stuck with Logistic Regression. It gave me about 78% accuracy on the test set (an improvement from 63% with the dummy classifier). Our parameters were penalty = l2, C = 0.1, solver = lbfgs, class_weights = balanced.
 
-As we can see from both the graphs below, the books that are least likely to be banned seem to be Book Series (fantasy, war, etc.) and Classics. The books that are more likely to be banned include books about middle and high school experiences, followed closely by gender and sexuality, lgbtq issues, friendship, and romance.
+As we can see from both the graphs below, the books that are least likely to be banned seem to be Book Series (fantasy, war, etc.) and Classics. From the Logistic Regression coefficients, the books that are more likely to be banned include books about middle and high school experiences, followed closely by books about gender and sexuality, lgbtq issues, friendship, romance, and children's books.
 
 ![Banned_Logreg_Coefficients(1)](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/57131c1b-c328-41c3-b75e-c1272393eb8c)
 ![Banned_KNN_Coefficients](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/999f7c90-7344-483c-a371-2512325c9113)
+
+## Future Steps
+1. I'd like to scrape more data for non-banned books. Right now I am on the edge of imbalanced data (about 60% banned/40% non-banned). In particular I would like to source more books from elementary, middle, and high school libraries (rather than 1000 popular books in general). Some possible sources include the American Library Association (ALA) and the Association of Library Services for Children's (ALSC) summer reading lists, and the Battle of the Books (national and NC) reading lists. However, scraping these would require quite a bit of data wrangling as they're embedded in multiple webpages and/or pdfs.
+2. I performed my topic modelling manually. I wonder: is there a more systematic way to find the best # of topics when working with singular value decomposition for NLP? Or perhaps this is a place for interpretation and judgment.
+3. Ideally I would get my model to 80% accuracy. I think that having more data (closer to 1000 banned books/1000 non-banned books) would certainly help with this goal.
