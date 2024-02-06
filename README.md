@@ -56,15 +56,14 @@ I described these topics with the following feature names:
 13. "friendship"
 14. "prize_novel"
 
-Using these features, I tried a few models: Logistic Regression, KNN, Decision Tree, and Random Forest. They performed about equally, so for maximum interpretability I stuck with Logistic Regression. It gave me about 78% accuracy on the test set (an improvement from 63% with the dummy classifier). Our parameters were penalty = l2, C = 0.1, solver = lbfgs, class_weights = balanced.
+Using these features, I tried a few models: Logistic Regression, KNN, Decision Tree, and Random Forest. They performed about equally, so for maximum interpretability I stuck with Logistic Regression. It gave me 80% accuracy on the test set (an improvement from 30% with the dummy classifier). Our parameters were penalty = l2, C = 100, solver = lbfgs.
 
-As we can see from both the graphs below, the books that are least likely to be banned seem to be Book Series (fantasy, war, etc.) and Classics. From the Logistic Regression coefficients, the books that are more likely to be banned include books about middle and high school experiences, followed closely by books about gender and sexuality, lgbtq issues, friendship, romance, and children's books.
+As we can see from the Logistic Regression coefficient values below, the book topics that are least likely to be banned seem to be Book Series, NYT Authors, and Classics. The books that are more likely to be banned include books about gender and sexuality, middle and high school experiences, and friendship. KNN feature importances give us another angle on which topics are important, but it doesn't tell us which are more likely to be banned or not banned.
 
-![Banned_Logreg_Coefficients(1)](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/57131c1b-c328-41c3-b75e-c1272393eb8c)
-![Banned_KNN_Coefficients](https://github.com/liyueling13/Predicting-Banned-Books/assets/81717153/999f7c90-7344-483c-a371-2512325c9113)
+![Banned_Logreg_Coefficients](https://github.com/liyueling13/Banned-Books-with-Topic-Modelling-and-Logistic-Regression/assets/81717153/4f574463-5b49-4ec7-ad5f-3078ac70cc9b)
+![Banned_KNN_Coefficients](https://github.com/liyueling13/Banned-Books-with-Topic-Modelling-and-Logistic-Regression/assets/81717153/3d5fad2d-484b-4e1d-88ab-341f9b14cf41)
 
 ## Future Steps
-1. I'd like to scrape more data for non-banned books. Right now I am on the edge of imbalanced data (about 60% banned/40% non-banned). In particular I would like to source more books from elementary, middle, and high school libraries (rather than 1000 popular books in general). Some possible sources include the American Library Association (ALA) and the Association of Library Services for Children's (ALSC) summer reading lists, and the Battle of the Books (national and NC) reading lists. However, scraping these would require quite a bit of data wrangling as they're embedded in multiple webpages and/or pdfs.
+1. I'd like to scrape more data for non-banned books. Before resampling, I had imbalanced data (about 60% banned/40% non-banned). I would like to source more books from elementary, middle, and high school libraries (rather than 1000 popular books in general). Some possible sources include the American Library Association (ALA) and the Association of Library Services for Children's (ALSC) summer reading lists, and the Battle of the Books (national and NC) reading lists. However, scraping these would require quite a bit of data wrangling as they're embedded in multiple webpages and/or pdfs.
 2. I performed my topic modelling manually. I wonder: is there a more systematic way to find the best # of topics when working with singular value decomposition for NLP? Or perhaps this is a place for interpretation and judgment.
-3. Ideally I would get my model to 80% accuracy. I think that having more data (closer to 1000 banned books/1000 non-banned books) would certainly help with this goal.
-4. I would love to explore the incorrectly labelled books in the test set and look at their column values. Why were they mislabelled?
+3. I would love to explore the incorrectly labelled books in the test set and look at their column values. Why were they mislabelled?
